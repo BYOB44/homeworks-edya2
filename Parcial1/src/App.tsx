@@ -173,7 +173,7 @@ function App() {
 
   return (
     <div style={{ padding: "20px" }}>
-      <h1>Sistema Clínica (Básico)</h1>
+      <h1>Sistema Clínica creado por Molina lara Alejandro</h1>
 
       <h2>Agregar Paciente</h2>
       <input
