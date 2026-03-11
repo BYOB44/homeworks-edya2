@@ -1,0 +1,94 @@
+/* Fondo general */
+body{
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(135deg, #1a1a1a, #3b0a57);
+  color: white;
+  display: flex;
+  justify-content: center;
+}
+
+/* Contenedor principal */
+#root{
+  width: 100%;
+  max-width: 800px;
+  padding: 40px;
+}
+
+/* Títulos */
+h1{
+  text-align: center;
+  color: #d9a9ff;
+  margin-bottom: 30px;
+}
+
+h2{
+  color: #ffffff;
+  margin-top: 30px;
+}
+
+/* Formulario */
+form{
+  background: #111;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 5px 20px rgba(0,0,0,0.6);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Inputs */
+input{
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #6a0dad;
+  background-color: #1f1f1f;
+  color: white;
+  font-size: 14px;
+}
+
+input::placeholder{
+  color: #bbb;
+}
+
+input:focus{
+  outline: none;
+  border-color: #c77dff;
+}
+
+/* Botón */
+button{
+  background: #6a0dad;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover{
+  background: #9d4edd;
+  transform: scale(1.05);
+}
+
+/* Tarjetas de libros */
+div{
+  background: #0f0f0f;
+  border-left: 4px solid #9d4edd;
+  padding: 15px;
+  margin-top: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.4);
+}
+
+/* Texto dentro de tarjetas */
+p{
+  margin: 4px 0;
+}
+
+b{
+  color: #c77dff;
+}
