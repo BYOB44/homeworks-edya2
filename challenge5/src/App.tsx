@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Queue } from "./Queue";
 import PersonForm from "./PersonForm";
 import QueueList from "./QueueList";
-import {Person} from "./Person";
+import type { Person } from "./Person";
 import "./App.css";
 
 
