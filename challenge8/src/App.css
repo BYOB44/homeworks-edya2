@@ -1,0 +1,17 @@
+.container {
+  text-align: center;
+  padding: 30px;
+}
+
+.title {
+  color: #4da6ff;
+  margin-bottom: 20px;
+  font-size: 32px;
+}
+
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
