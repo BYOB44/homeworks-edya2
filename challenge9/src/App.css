@@ -1,0 +1,52 @@
+.app-container {
+  display: flex;
+  height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: linear-gradient(180deg, #0b1f3a, #142f57);
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h3 {
+  margin-bottom: 20px;
+}
+
+/* MENU */
+.menu-item {
+  margin: 8px 0;
+}
+
+.menu-link {
+  display: block;
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.menu-link:hover {
+  background: rgba(255, 255, 255, 0.1);
+  padding-left: 15px;
+}
+
+.submenu {
+  margin-left: 15px;
+}
+
+/* CONTENIDO */
+.main-content {
+  flex: 1;
+  padding: 30px;
+  background: white;
+}
+
+/* TITULOS */
+.page-title {
+  font-size: 28px;
+  color: #0b1f3a;
+}
