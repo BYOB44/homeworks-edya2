@@ -30,11 +30,7 @@ export default function CreateNode({ parentId, parentType }: any) {
 
   return (
     <div>
-      <input
-        placeholder="Nombre"
-        value={name}
-        onChange={(e) => setName(e.target.value)}
-      />
+      <input value={name} onChange={(e) => setName(e.target.value)} placeholder="Nombre" />
 
       <select onChange={(e) => setType(e.target.value)}>
         <option value="folder">Carpeta</option>

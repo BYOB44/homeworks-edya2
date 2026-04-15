@@ -15,21 +15,20 @@ export default function Login() {
   };
 
   return (
-    <div>
-      <h2>Login</h2>
+    <div className="login-container">
+      <div className="login-box">
+        <h2>Iniciar Sesión</h2>
 
-      <input
-        placeholder="Correo"
-        onChange={(e) => setEmail(e.target.value)}
-      />
+        <input placeholder="Correo" onChange={(e) => setEmail(e.target.value)} />
 
-      <input
-        type="password"
-        placeholder="Contraseña"
-        onChange={(e) => setPassword(e.target.value)}
-      />
+        <input
+          type="password"
+          placeholder="Contraseña"
+          onChange={(e) => setPassword(e.target.value)}
+        />
 
-      <button onClick={login}>Entrar</button>
+        <button onClick={login}>Entrar</button>
+      </div>
     </div>
   );
 }

@@ -14,7 +14,10 @@ export default function NodeItem({ node, nodes }: Props) {
 
   return (
     <li>
-      <div onClick={() => setOpen(!open)}>
+      <div
+        className={node.type === "folder" ? "folder" : "file"}
+        onClick={() => setOpen(!open)}
+      >
         {node.type === "folder" ? "📁" : "📄"} {node.name}
       </div>
 

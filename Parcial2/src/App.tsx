@@ -22,14 +22,17 @@ function App() {
   if (!user) return <Login />;
 
   return (
-    <div>
+    <div className="container">
       <h1>Gestor de Archivos</h1>
 
       <CreateNode parentId={null} parentType="folder" />
 
       <button onClick={loadNodes}>Actualizar</button>
 
-      <TreeView nodes={nodes} />
+      <div className="tree-container">
+        <h3>Árbol de archivos</h3>
+        <TreeView nodes={nodes} />
+      </div>
     </div>
   );
 }

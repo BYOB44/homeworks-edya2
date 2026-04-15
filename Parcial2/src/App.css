@@ -1,93 +1,81 @@
-/* Fondo general */
 body {
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial;
   background: #0f0f0f;
-  color: #ffffff;
+  color: white;
 }
 
-/* Contenedor principal */
-div {
-  padding: 10px;
+.container {
+  max-width: 800px;
+  margin: auto;
 }
 
-/* Título */
-h1 {
+/* LOGIN */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-box {
+  background: #1c1c1c;
+  padding: 30px;
+  border-radius: 10px;
+  width: 300px;
   text-align: center;
-  color: #ff7a00;
-  margin-bottom: 20px;
 }
 
-/* Inputs */
+.login-box h2 {
+  color: #ff7a00;
+}
+
+/* INPUTS */
 input, select {
   padding: 8px;
   margin: 5px;
   border-radius: 6px;
   border: none;
-  outline: none;
   background: #1c1c1c;
   color: white;
-  transition: 0.3s;
 }
 
-input:focus, select:focus {
-  border: 1px solid #ff7a00;
-}
-
-/* Botones */
+/* BOTONES */
 button {
-  padding: 8px 12px;
+  padding: 8px;
   margin: 5px;
-  border: none;
   border-radius: 6px;
+  border: none;
   background: #ff7a00;
   color: white;
-  font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
 }
 
 button:hover {
   background: #ff9500;
-  transform: scale(1.05);
 }
 
-/* Lista árbol */
+/* ÁRBOL */
+.tree-container {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
 ul {
   list-style: none;
   padding-left: 20px;
 }
 
-/* Nodos */
-li {
-  padding: 6px 10px;
-  margin: 4px 0;
-  border-radius: 6px;
-  transition: 0.3s;
-}
-
-/* Hover nodos */
 li:hover {
   background: #1c1c1c;
-  cursor: pointer;
-  border-left: 3px solid #ff7a00;
 }
 
-/* Iconos */
-li div {
-  display: inline-block;
+.folder {
+  color: #ffb347;
 }
 
-/* Scroll bonito */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #ff7a00;
-  border-radius: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: #1c1c1c;
+.file {
+  color: #ccc;
 }
