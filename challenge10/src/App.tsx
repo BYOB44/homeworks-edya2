@@ -3,6 +3,7 @@ import ForceGraph2D from "react-force-graph-2d";
 import type { City, Person } from "./types";
 
 const App: React.FC = () => {
+
   const [cities] = useState<City[]>([
     { id: "c1", name: "Cali" },
     { id: "c2", name: "Bogotá" },
@@ -14,9 +15,12 @@ const App: React.FC = () => {
     { id: "p2", name: "Ana", age: 30, cityId: "c2" },
     { id: "p3", name: "Luis", age: 22, cityId: "c1" },
     { id: "p4", name: "Sofia", age: 28, cityId: "c3" },
+    { id: "p5", name: "Carlos", age: 35, cityId: "c2" },
+    { id: "p6", name: "Maria", age: 27, cityId: "c3" },
   ]);
 
   const [selectedCity, setSelectedCity] = useState<string>("");
+
 
   const graphData = {
     nodes: [
@@ -37,14 +41,16 @@ const App: React.FC = () => {
     })),
   };
 
+ 
   const peopleInCity = people.filter(
     (p) => p.cityId === selectedCity
   );
 
   return (
-    <div style={{ textAlign: "center" }}>
+    <div style={{ textAlign: "center", color: "white" }}>
       <h1>Friends & Cities Graph</h1>
 
+      {/* SELECT */}
       <select onChange={(e) => setSelectedCity(e.target.value)}>
         <option value="">Select a city</option>
         {cities.map((c) => (
@@ -54,6 +60,7 @@ const App: React.FC = () => {
         ))}
       </select>
 
+      {/* LIST */}
       <h2>People in city:</h2>
       <ul>
         {peopleInCity.map((p) => (
@@ -63,10 +70,23 @@ const App: React.FC = () => {
         ))}
       </ul>
 
-      <div style={{ height: "500px" }}>
+      {/* GRAPH */}
+      <div style={{ height: "500px", background: "#0f172a" }}>
         <ForceGraph2D
           graphData={graphData}
+
+   
+          linkWidth={2}
+          linkColor={() => "#ffffff"}
+
+         
+          linkDirectionalParticles={2}
+          linkDirectionalParticleSpeed={0.005}
+
+    
           nodeLabel={(node: any) => node.label}
+
+     
           nodeCanvasObject={(
             node: any,
             ctx: CanvasRenderingContext2D,
@@ -76,15 +96,15 @@ const App: React.FC = () => {
             const fontSize = 12 / globalScale;
 
             ctx.font = `${fontSize}px Sans-Serif`;
-
-            ctx.fillStyle =
+           ctx.fillStyle =
               node.type === "city" ? "orange" : "black";
 
             ctx.beginPath();
             ctx.arc(node.x, node.y, 6, 0, 2 * Math.PI);
             ctx.fill();
 
-            ctx.fillStyle = "gray";
+
+            ctx.fillStyle = "white";
             ctx.fillText(label, node.x + 8, node.y + 4);
           }}
         />
