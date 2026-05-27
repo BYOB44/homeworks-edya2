@@ -9,4 +9,4 @@ export function Header() {
       <span className="header__badge">Estructuras de Datos II</span>
     </header>
   );
-}
+} 

@@ -1,13 +1,14 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { Trie } from "../algorithms/Trie";
 import { MaxHeap } from "../algorithms/MaxHeap";
 import { SongGraph } from "../algorithms/SongGraph";
-import { songs } from "../data/songs";
+import { songs as initialSongs } from "../data/songs";
 import { songRelations } from "../data/songRelations";
-import type{ ISong } from "../interfaces/song.interface";
+import type { ICreateSong, ISong } from "../interfaces/song.interface";
 
 export interface IUseMusicPlatform {
   songs: ISong[];
+  addSong: (newSong: ICreateSong) => void;
   searchSong: (title: string) => boolean;
   getSuggestions: (prefix: string) => ISong[];
   getTopSongs: (quantity: number) => ISong[];
@@ -15,6 +16,8 @@ export interface IUseMusicPlatform {
 }
 
 export function useMusicPlatform(): IUseMusicPlatform {
+  const [songs, setSongs] = useState<ISong[]>(initialSongs);
+
   const trie = useMemo<Trie>(() => {
     const newTrie = new Trie();
 
@@ -23,11 +26,11 @@ export function useMusicPlatform(): IUseMusicPlatform {
     });
 
     return newTrie;
-  }, []);
+  }, [songs]);
 
   const maxHeap = useMemo<MaxHeap>(() => {
     return new MaxHeap(songs);
-  }, []);
+  }, [songs]);
 
   const songGraph = useMemo<SongGraph>(() => {
     const graph = new SongGraph();
@@ -41,7 +44,20 @@ export function useMusicPlatform(): IUseMusicPlatform {
     });
 
     return graph;
-  }, []);
+  }, [songs]);
+
+  const addSong = (newSong: ICreateSong): void => {
+    const song: ISong = {
+      id: `s${Date.now()}`,
+      title: newSong.title,
+      artist: newSong.artist,
+      genre: newSong.genre,
+      popularity: 90,
+      imageUrl: newSong.imageUrl ?? "",
+    };
+
+    setSongs((currentSongs: ISong[]) => [...currentSongs, song]);
+  };
 
   const searchSong = (title: string): boolean => {
     return trie.search(title);
@@ -65,6 +81,7 @@ export function useMusicPlatform(): IUseMusicPlatform {
 
   return {
     songs,
+    addSong,
     searchSong,
     getSuggestions,
     getTopSongs,

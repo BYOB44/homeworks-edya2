@@ -235,3 +235,65 @@ select {
     box-shadow: 0 0 0 3px rgba(155, 93, 229, 0.16);
   }
 }
+
+.song-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+
+  input {
+    width: 100%;
+    padding: 0.85rem;
+    border: 1px solid $color-border;
+    border-radius: $radius-md;
+    background-color: $color-card-light;
+    color: $color-text;
+    outline: none;
+
+    &::placeholder {
+      color: #9287a3;
+    }
+
+    &:focus {
+      border-color: $color-amethyst;
+      box-shadow: 0 0 0 3px rgba(155, 93, 229, 0.16);
+    }
+  }
+
+  button {
+    padding: 0.9rem 1rem;
+    border: none;
+    border-radius: $radius-md;
+    background-color: $color-amethyst;
+    color: #ffffff;
+    font-weight: bold;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $color-amethyst-dark;
+    }
+  }
+}
+
+.song-card__placeholder,
+.suggestions-list__placeholder {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, $color-amethyst, $color-amethyst-dark);
+  color: #ffffff;
+  font-weight: bold;
+}
+
+.song-card__placeholder {
+  width: 58px;
+  height: 58px;
+  border-radius: 12px;
+  font-size: 1.2rem;
+}
+
+.suggestions-list__placeholder {
+  width: 46px;
+  height: 46px;
+  border-radius: 10px;
+}

@@ -1,7 +1,8 @@
 import { Header } from "../components/shared/Header";
-import { SearchPanel } from "../components/shared/search/SearchPanel";
+import { SearchPanel } from "../components/shared/search/searchPanel";
 import { RankingPanel } from "../components/shared/ranking/RankingPanel";
 import { RecommendationsPanel } from "../components/shared/recommendations/RecommendationsPanel";
+import { AddSongForm } from "../components/shared/addsong/AddSongForm";
 
 export function Home() {
   return (
@@ -12,6 +13,7 @@ export function Home() {
         <SearchPanel />
         <RankingPanel />
         <RecommendationsPanel />
+        <AddSongForm />
       </section>
     </main>
   );
