@@ -1,0 +1,14 @@
+@use "./variables" as *;
+
+@mixin card {
+  background: linear-gradient(180deg, rgba(36, 28, 46, 0.94), rgba(25, 21, 31, 0.96));
+  border: 1px solid $color-border;
+  border-radius: $radius-lg;
+  box-shadow: $shadow-card;
+}
+
+@mixin flex-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
